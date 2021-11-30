@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Lost : State
 {
-    public Lost(BattleSystem battleSystem) : base(battleSystem)
+    public Lost(BattleSystem battleSystem, CombatantController player, CombatantController enemy) : base(battleSystem,player,enemy)
     {
     }
 
     public override IEnumerator EnterState()
     {
+        //DO UI STUFF
         return base.EnterState();
     }
 }

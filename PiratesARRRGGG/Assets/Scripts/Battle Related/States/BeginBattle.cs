@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class BeginBattle : State
 {
-    public BeginBattle(BattleSystem battleSystem) : base(battleSystem)
+    public BeginBattle(BattleSystem battleSystem, CombatantController player, CombatantController enemy) : base(battleSystem,player,enemy)
     {
     }
     
     public override IEnumerator EnterState()
     {
+        //DO UI STUFF
         
+        yield return new WaitForSeconds(2f);
         
-        yield return new WaitForSeconds(0.1f);
-        
-        BattleSystem.ChangeState(new PlayerTurn(BattleSystem));
+        BattleSystem.ChangeState(new PlayerTurn(BattleSystem, Player, Enemy));
     }
     
     

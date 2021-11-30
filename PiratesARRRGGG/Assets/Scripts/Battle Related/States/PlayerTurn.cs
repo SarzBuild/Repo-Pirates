@@ -6,43 +6,50 @@ using UnityEngine;
 
 public class PlayerTurn : State
 {
-    public PlayerTurn(BattleSystem battleSystem) : base(battleSystem)
+    public PlayerTurn(BattleSystem battleSystem, CombatantController player, CombatantController enemy) : base(battleSystem,player,enemy)
     {
     }
 
     public override IEnumerator EnterState()
     {
+        //DO UI STUFF PLAYER TURN
+        
+        if (!Player.affectedByEffect) return base.EnterState();
+        
+        Player.Damaged(Enemy.stats.magicPower);
+        Player.effectLastingTime--;
         return base.EnterState();
     }
     
-    public override IEnumerator UseAbility(AbilityBase ability, CombatantController self, CombatantController target)
+    public override IEnumerator UseAbility(AbilityBase ability)
     {
-        ability.DoAbility();
-
+        //DO UI STUFF PLAYER USES ABILITY
+        Debug.Log("HELLOOOOO");
         switch (ability.abilityType)
         {
             case AbilityType.HEAL:
-                if (self.stats.currentHealth >= self.stats.maxHealth) self.stats.currentHealth = self.stats.maxHealth;
-                else self.stats.currentHealth += (int)ability.DoAbility();
+                Player.Heal((int)ability.DoAbility());
                 break;
             case AbilityType.ATTACK:
-                
+                Enemy.Damaged((int)ability.DoAbility());
                 break;
             case AbilityType.STATUSEFFECT:
-               
+                Enemy.SetStatusEffect((int)ability.DoAbility());
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
+
+        yield return new WaitForSeconds(2f);
         
-        
-        /*if (true)   
+        if (Player.CheckIfAlive())   
         {
-            BattleSystem.ChangeState(new Won(BattleSystem));
+            BattleSystem.ChangeState(new Won(BattleSystem, Player, Enemy));
         }
         else
         {
-            BattleSystem.ChangeState(new EnemyTurn(BattleSystem));
-        }*/
-        yield break;
+            BattleSystem.ChangeState(new EnemyTurn(BattleSystem, Player, Enemy));
+        }
     }
     
 }

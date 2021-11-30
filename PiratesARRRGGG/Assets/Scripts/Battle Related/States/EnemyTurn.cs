@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class EnemyTurn : State
 {
-    public EnemyTurn(BattleSystem battleSystem) : base(battleSystem)
+    public EnemyTurn(BattleSystem battleSystem, CombatantController player, CombatantController enemy) : base(battleSystem,player,enemy)
     {
-        //throw new System.NotImplementedException();
     }
 
     public override IEnumerator EnterState()
     {
+        
+        
         return base.EnterState();
 
         /*if (true)
