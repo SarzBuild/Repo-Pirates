@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d38eae1ab3030942a1efe644fac9652, type: 3}
-  m_Name: newBallAbility
+  m_Script: {fileID: 11500000, guid: 9b2da7e974ac43543a28847feeb8bb7f, type: 3}
+  m_Name: HealAbility
   m_EditorClassIdentifier: 
-  abilityName: Ball
+  abilityName: Heal
   icon: {fileID: 0}
-  abilityType: 0
-  Damage: 100
-  VFX: {fileID: 0}
-  Animation: {fileID: 0}
+  abilityType: 1

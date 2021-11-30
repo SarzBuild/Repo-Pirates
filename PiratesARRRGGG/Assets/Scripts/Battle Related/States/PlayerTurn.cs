@@ -27,7 +27,7 @@ public class PlayerTurn : State
         switch (ability.abilityType) //Checks the ability's type and calls the DoAbility Function passing to the entities functions.
         {
             case AbilityType.HEAL:
-                BattleSystem.Player.Heal((int)ability.DoAbility());
+                BattleSystem.Player.Heal((int)ability.DoAbility());                
                 break;
             case AbilityType.ATTACK:
                 BattleSystem.Enemy.Damaged((int)ability.DoAbility());

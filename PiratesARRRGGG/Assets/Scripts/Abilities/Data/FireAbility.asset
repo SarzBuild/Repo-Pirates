@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d38eae1ab3030942a1efe644fac9652, type: 3}
-  m_Name: newBallAbility
+  m_Script: {fileID: 11500000, guid: 3fc9a55f17ba7c74c9f1f7e38da01bd0, type: 3}
+  m_Name: FireAbility
   m_EditorClassIdentifier: 
-  abilityName: Ball
+  abilityName: Fire Ball
   icon: {fileID: 0}
-  abilityType: 0
-  Damage: 100
+  target: 1
+  abilityType: 2
+  Damage: 0
   VFX: {fileID: 0}
   Animation: {fileID: 0}

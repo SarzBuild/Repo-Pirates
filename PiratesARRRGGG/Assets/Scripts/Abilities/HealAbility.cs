@@ -13,6 +13,8 @@ public class HealAbility : AbilityBase
 
     public override float DoAbility()
     {
-        return 1f;
+        Debug.Log("Heal");
+        //PlayAnimation();
+        return 100f;
     }
 }
