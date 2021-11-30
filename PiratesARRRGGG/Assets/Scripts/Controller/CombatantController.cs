@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatantController : MonoBehaviour
@@ -13,10 +10,11 @@ public class CombatantController : MonoBehaviour
     
     public bool CheckIfAlive() => stats.currentHealth <= 0;
 
-    private void HealthModifier(int value)
+    private void HealthModifier(int value) //The actual function 
     {
         stats.currentHealth += value;
         if (stats.currentHealth >= stats.maxHealth) stats.currentHealth = stats.maxHealth;
+        if (stats.currentHealth <= 0) stats.currentHealth = 0;
     }
     
     public void Damaged(int value)

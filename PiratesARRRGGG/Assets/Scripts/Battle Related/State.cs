@@ -1,19 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
 
 public abstract class State
 {
     public BattleSystem BattleSystem;
-    public CombatantController Player;
-    public CombatantController Enemy;
-    
-    protected State(BattleSystem battleSystem, CombatantController player, CombatantController enemy)
+
+    protected State(BattleSystem battleSystem)
     {
         BattleSystem = battleSystem;
-        Player = player;
-        Enemy = enemy;
     }
 
     public virtual IEnumerator EnterState()

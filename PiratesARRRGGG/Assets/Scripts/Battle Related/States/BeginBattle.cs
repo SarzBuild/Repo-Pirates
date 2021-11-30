@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BeginBattle : State
 {
-    public BeginBattle(BattleSystem battleSystem, CombatantController player, CombatantController enemy) : base(battleSystem,player,enemy)
+    public BeginBattle(BattleSystem battleSystem) : base(battleSystem)
     {
     }
     
@@ -14,7 +13,7 @@ public class BeginBattle : State
         
         yield return new WaitForSeconds(2f);
         
-        BattleSystem.ChangeState(new PlayerTurn(BattleSystem, Player, Enemy));
+        BattleSystem.ChangeState(new PlayerTurn(BattleSystem));
     }
     
     

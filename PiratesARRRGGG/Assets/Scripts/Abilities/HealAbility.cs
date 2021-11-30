@@ -13,6 +13,6 @@ public class HealAbility : AbilityBase
 
     public override float DoAbility()
     {
-        throw new System.NotImplementedException();
+        return 1f;
     }
 }

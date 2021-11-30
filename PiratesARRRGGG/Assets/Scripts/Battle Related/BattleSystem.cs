@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleSystem : StateMachine
@@ -17,7 +14,7 @@ public class BattleSystem : StateMachine
 
     private void Start()
     {
-        Initialize(new BeginBattle(this, player, enemy));
+        Initialize(new BeginBattle(this));
     }
 
     private void Update()
