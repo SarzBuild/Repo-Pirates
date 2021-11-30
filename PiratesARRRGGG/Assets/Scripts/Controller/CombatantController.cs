@@ -3,34 +3,34 @@ using UnityEngine;
 public class CombatantController : MonoBehaviour
 {
     //Access to Combatant stats
-    public StatsSO stats;
-    public CritHandling CritHandling;
-    public bool affectedByEffect = false;
-    public int effectLastingTime;
+    [SerializeField] public StatsSO Stats;
+    [SerializeField] public CritHandling CritHandling;
+    [SerializeField] public bool AffectedByEffect = false;
+    [SerializeField] public int EffectLastingTimeTurns;
     
-    public bool CheckIfAlive() => stats.currentHealth <= 0;
+    public bool CheckIfAlive() => Stats.currentHealth >= 0;
 
     private void HealthModifier(int value) //The actual function 
     {
-        stats.currentHealth += value;
-        if (stats.currentHealth >= stats.maxHealth) stats.currentHealth = stats.maxHealth;
-        if (stats.currentHealth <= 0) stats.currentHealth = 0;
+        Stats.currentHealth += value;
+        if (Stats.currentHealth >= Stats.maxHealth) Stats.currentHealth = Stats.maxHealth;
+        if (Stats.currentHealth <= 0) Stats.currentHealth = 0;
     }
     
     public void Damaged(int value)
     {
-        HealthModifier(-value + CritHandling.CheckCrit(value, stats.physicalPower));
+        HealthModifier(-value + CritHandling.CheckCrit(value, Stats.physicalPower));
     }
 
     public void Heal(int value)
     {
-        HealthModifier(value + CritHandling.CheckCrit(value, stats.magicPower));
+        HealthModifier(value + CritHandling.CheckCrit(value, Stats.magicPower));
     }
 
-    public void SetStatusEffect(int magicpower)
+    public void SetStatusEffect(int magicPower)
     {
-        affectedByEffect = true;
-        effectLastingTime = magicpower;
+        AffectedByEffect = true;
+        EffectLastingTimeTurns = magicPower;
     }
     
     
