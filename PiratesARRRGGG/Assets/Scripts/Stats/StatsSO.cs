@@ -10,8 +10,11 @@ public class StatsSO : ScriptableObject
     [SerializeField] public string entityName;
     [SerializeField] public int maxHealth;
     [SerializeField] public int currentHealth;
+    [SerializeField] public int physicalPower;
+    [SerializeField] public int magicPower;
     
     //Combatant abilities list
-    [SerializeField] public AbilityBase[] ablities;
+    [SerializeField] public AbilityBase[] ability;
     
+
 }

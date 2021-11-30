@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38eae1ab3030942a1efe644fac9652, type: 3}
   m_Name: newBallAbility
   m_EditorClassIdentifier: 
-  abilityName: 
+  abilityName: Ball
   icon: {fileID: 0}
+  abilityType: 1

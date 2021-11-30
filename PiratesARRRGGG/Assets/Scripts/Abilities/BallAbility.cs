@@ -11,7 +11,7 @@ public class BallAbility : AbilityBase
         throw new System.NotImplementedException();
     }
 
-    public override void DoAbility()
+    public override float DoAbility()
     {
         throw new System.NotImplementedException();
     }

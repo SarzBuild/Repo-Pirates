@@ -4,18 +4,20 @@ using UnityEngine;
 
 public abstract class StateMachine : MonoBehaviour
 {
+    //
     public State CurrentState { get; private set; }
 
+    //Initialization of state machine
     public void Initialize(State startingState)
     {
         CurrentState = startingState;
-        CurrentState.EnterState();
+        StartCoroutine(CurrentState.EnterState());
     }
 
+    //
     public void ChangeState(State newState)
     {
-        CurrentState.ExitState();
         CurrentState = newState;
-        CurrentState.EnterState();
+        StartCoroutine(CurrentState.EnterState());
     }  
 }

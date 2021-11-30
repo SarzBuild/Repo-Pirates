@@ -7,14 +7,15 @@ public class BeginBattle : State
     public BeginBattle(BattleSystem battleSystem) : base(battleSystem)
     {
     }
+    
     public override IEnumerator EnterState()
     {
-        return base.EnterState();
+        
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        BattleSystem.ChangeState(new PlayerTurn(BattleSystem));
     }
-
-    public override IEnumerator ExitState()
-    {
-        return base.ExitState();
-    }
+    
     
 }

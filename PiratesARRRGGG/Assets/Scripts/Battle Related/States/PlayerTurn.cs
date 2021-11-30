@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
@@ -14,23 +15,34 @@ public class PlayerTurn : State
         return base.EnterState();
     }
     
-    public override IEnumerator UseAbility()
+    public override IEnumerator UseAbility(AbilityBase ability, CombatantController self, CombatantController target)
     {
-        return base.UseAbility();
+        ability.DoAbility();
 
-        if (true)
+        switch (ability.abilityType)
+        {
+            case AbilityType.HEAL:
+                if (self.stats.currentHealth >= self.stats.maxHealth) self.stats.currentHealth = self.stats.maxHealth;
+                else self.stats.currentHealth += (int)ability.DoAbility();
+                break;
+            case AbilityType.ATTACK:
+                
+                break;
+            case AbilityType.STATUSEFFECT:
+               
+                break;
+        }
+        
+        
+        /*if (true)   
         {
             BattleSystem.ChangeState(new Won(BattleSystem));
         }
         else
         {
             BattleSystem.ChangeState(new EnemyTurn(BattleSystem));
-        }
-        
+        }*/
+        yield break;
     }
-
-    public override IEnumerator ExitState()
-    {
-        return base.ExitState();
-    }
+    
 }

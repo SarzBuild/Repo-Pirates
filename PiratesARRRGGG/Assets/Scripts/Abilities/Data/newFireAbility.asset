@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc9a55f17ba7c74c9f1f7e38da01bd0, type: 3}
   m_Name: newFireAbility
   m_EditorClassIdentifier: 
-  abilityName: 
+  abilityName: Fire
   icon: {fileID: 0}
+  abilityType: 2

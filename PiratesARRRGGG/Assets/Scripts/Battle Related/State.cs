@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public abstract class State
 {
-    protected BattleSystem BattleSystem;
+    public BattleSystem BattleSystem;
     
     protected State(BattleSystem battleSystem)
     {
+        BattleSystem = battleSystem;
     }
     
     
@@ -16,12 +18,7 @@ public abstract class State
         yield break;
     }
 
-    public virtual IEnumerator ExitState()
-    {
-        yield break;
-    }
-
-    public virtual IEnumerator UseAbility()
+    public virtual IEnumerator UseAbility(AbilityBase ability, CombatantController self, CombatantController target)
     {
         yield break;
     }
