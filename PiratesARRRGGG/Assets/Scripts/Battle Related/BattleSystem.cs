@@ -14,7 +14,7 @@ public class BattleSystem : StateMachine
 
     private void Start()
     {
-        Player.stats.currentHealth = Player.stats.maxHealth;
+        Player.Stats.currentHealth = Player.Stats.maxHealth;
         //Enemy.stats.currentHealth = Enemy.stats.maxHealth;
         Initialize(new BeginBattle(this));
     }
@@ -23,12 +23,12 @@ public class BattleSystem : StateMachine
     {
         Debug.Log(CurrentState);
 
-        Debug.Log(Player.stats.currentHealth);
+        Debug.Log(Player.Stats.currentHealth);
     }
 
     public void OnButtonInteraction(int index)
     {
-        if (index > Player.stats.ability.Length) return;
-        StartCoroutine(CurrentState.UseAbility(Player.stats.ability[index]));
+        if (index > Player.Stats.ability.Length) return;
+        StartCoroutine(CurrentState.UseAbility(Player.Stats.ability[index]));
     }
 }

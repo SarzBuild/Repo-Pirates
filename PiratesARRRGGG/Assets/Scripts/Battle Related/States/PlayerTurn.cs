@@ -13,10 +13,10 @@ public class PlayerTurn : State
         
         //DO UI STUFF PLAYER TURN
         
-        if (!BattleSystem.Player.affectedByEffect) return base.EnterState(); //If the player is not affected by a status effect, we just yield return from base.
+        if (!BattleSystem.Player.AffectedByEffect) return base.EnterState(); //If the player is not affected by a status effect, we just yield return from base.
         
-        BattleSystem.Player.Damaged(BattleSystem.Enemy.stats.magicPower); //Otherwise the player gets attacked
-        BattleSystem.Player.effectLastingTime--; //And the lasting time of the effect gets updated.
+        BattleSystem.Player.Damaged(BattleSystem.Enemy.Stats.magicPower); //Otherwise the player gets attacked
+        BattleSystem.Player.EffectLastingTimeTurns--; //And the lasting time of the effect gets updated.
         return base.EnterState();
     }
     
