@@ -9,12 +9,19 @@ public class MenuAnim : MonoBehaviour
     public GameObject Combat01;
     public GameObject Combat02;
     public GameObject Quit;
+    public GameObject Ship;
+    public SpriteRenderer ShipSprite;
+    public GameObject Octo1;
+    public GameObject Octo2;
 
     private float Timer;
     private bool Bool01 = true;
     private bool Bool02 = true;
     private bool Bool03 = true;
     private bool Bool04 = true;
+    private bool BoolShip = true;
+    private bool BoolOcto1 = true;
+    private bool BoolOcto2 = true;
 
     private Vector3 TitleStartPos;
     private Vector3 C01StartPos;
@@ -33,7 +40,6 @@ public class MenuAnim : MonoBehaviour
         Combat01.transform.position -= new Vector3(0, 900, 0);
         Combat02.transform.position -= new Vector3(0, 900, 0);
         Quit.transform.position -= new Vector3(0, 900, 0);
-
     }
 
     // Update is called once per frame
@@ -58,8 +64,58 @@ public class MenuAnim : MonoBehaviour
         }
         else if (Timer > 1.2f && Bool04)
         {
-            Quit.transform.DOMoveY(QuitStartPos.y, 1f).SetEase(Ease.OutBounce);
+            Quit.transform.DOMoveY(QuitStartPos.y, 1f).SetEase(Ease.OutBounce).OnComplete(StartAnims);
             Bool04 = false;
         }
+    }
+
+    private void Octo1Move()
+    {
+        if (BoolOcto1)
+        {
+            Octo1.transform.DOMoveY(-3.5f, 4f).SetEase(Ease.OutSine).OnComplete(Octo2Move);
+            BoolOcto1 = false;
+        }
+        else
+        {
+            Octo2.transform.DOMoveY(-3.5f, 4f).SetEase(Ease.OutSine).OnComplete(Octo2Move);
+            BoolOcto1 = true;
+        }
+    }
+
+    private void Octo2Move()
+    {
+        if (BoolOcto2)
+        {
+            Octo1.transform.DOMoveY(-7f, 4f).SetEase(Ease.InSine).OnComplete(Octo1Move);
+            BoolOcto2 = false;
+        }
+        else
+        {
+            Octo2.transform.DOMoveY(-7f, 4f).SetEase(Ease.InSine).OnComplete(Octo1Move);
+            BoolOcto2 = true;
+        }
+    }
+
+    private void ShipMove()
+    {
+        if (BoolShip)
+        {
+            Ship.transform.DOMoveX(10f, 30f).SetEase(Ease.Linear).OnComplete(ShipMove);
+            ShipSprite.flipX = false;
+            BoolShip = false;
+        }
+        else
+        {
+            Ship.transform.DOMoveX(-10f, 30f).SetEase(Ease.Linear).OnComplete(ShipMove);
+            ShipSprite.flipX = true;
+            BoolShip = true;
+        }
+    }
+
+    private void StartAnims()
+    {
+        Octo1Move();
+        ShipMove();
     }
 }
