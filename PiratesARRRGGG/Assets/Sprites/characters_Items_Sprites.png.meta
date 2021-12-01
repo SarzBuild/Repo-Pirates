@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: 4889305519226485420
     second: fire_ball
+  - first:
+      213: -6104875633475385536
+    second: octopus
+  - first:
+      213: -7838830335954356315
+    second: octopus_bullet
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +135,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,7 +156,7 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,6 +164,48 @@ TextureImporter:
       bones: []
       spriteID: caaf9df077d4ad340800000000000000
       internalID: 4889305519226485420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: octopus
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04703c4d4ff174ba0800000000000000
+      internalID: -6104875633475385536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: octopus_bullet
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 115
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a772e26751e63390800000000000000
+      internalID: -7838830335954356315
       vertices: []
       indices: 
       edges: []
