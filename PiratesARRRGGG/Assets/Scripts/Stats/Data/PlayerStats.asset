@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: Player
   maxHealth: 150
-  currentHealth: 150
+  currentHealth: 130
   physicalPower: 10
   magicPower: 10
   ability:

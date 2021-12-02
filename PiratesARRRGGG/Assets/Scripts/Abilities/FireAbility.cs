@@ -5,14 +5,19 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Abilities/Fire", fileName = "newFireAbility")]
 public class FireAbility : AbilityBase
 {
-    public override void Initialize()
+    /*public float Damage;
+    public GameObject VFX;
+    public GameObject Animation;*/
+        public override void Initialize()
     {
         throw new System.NotImplementedException();
     }
 
     public override float DoAbility()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Fire attack!");
+        PlayAnimation();
+        return Damage;
     }
     
     

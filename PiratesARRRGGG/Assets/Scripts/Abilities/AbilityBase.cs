@@ -14,16 +14,29 @@ public abstract class AbilityBase : ScriptableObject
     //Inherited variables
     public string abilityName;
     public Sprite icon;
-    public AbilityType abilityType;  
+    public AbilityType abilityType;
 
+    public float Damage;
+    public GameObject VFX;
+    public GameObject Animation;
 
     //Overridable functions 
     public abstract void Initialize();
     public abstract float DoAbility();
 
-    public void PlayAnimation(GameObject animation, GameObject VFX)
+    public void PlayAnimation()
     {
-        Instantiate(animation);
-        Instantiate(VFX);
+        if (Animation)
+        {
+            GameObject animation = Instantiate(Animation);            
+            Destroy(animation, 1f);
+
+        }
+        if (VFX)
+        {
+            GameObject vfx = Instantiate(VFX);
+            Destroy(vfx, 1f);
+        }
+        
     }
 }

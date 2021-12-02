@@ -12,6 +12,8 @@ public class PierceAbility : AbilityBase
 
     public override float DoAbility()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Ramm!");
+        PlayAnimation();
+        return Damage;
     }
 }

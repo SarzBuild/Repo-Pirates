@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Pierce
   icon: {fileID: 0}
-  target: 1
   abilityType: 0
-  Damage: 0
+  Damage: 10
   VFX: {fileID: 0}
-  Animation: {fileID: 0}
+  Animation: {fileID: 3718703092262339456, guid: 170b3e9293cbeee4983f989b5e948507, type: 3}
