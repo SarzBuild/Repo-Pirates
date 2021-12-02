@@ -300,7 +300,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -644,10 +643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f77062cb1317f54bae99e4308dc2cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 608b03a554a9dd54ba37fcd53346783f, type: 2}
+  Stats: {fileID: 11400000, guid: 608b03a554a9dd54ba37fcd53346783f, type: 2}
   CritHandling: {fileID: 831992615}
-  affectedByEffect: 0
-  effectLastingTime: 0
+  AffectedByEffect: 0
+  EffectLastingTimeTurns: 0
 --- !u!212 &1179003033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -659,7 +658,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1146,10 +1144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f77062cb1317f54bae99e4308dc2cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 28e2336ec410ee442b72a84e85574fbe, type: 2}
+  Stats: {fileID: 11400000, guid: 28e2336ec410ee442b72a84e85574fbe, type: 2}
   CritHandling: {fileID: 831992615}
-  affectedByEffect: 0
-  effectLastingTime: 0
+  AffectedByEffect: 0
+  EffectLastingTimeTurns: 0
 --- !u!212 &1961028124
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1161,7 +1159,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

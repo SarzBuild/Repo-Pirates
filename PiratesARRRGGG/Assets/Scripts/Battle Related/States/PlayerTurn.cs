@@ -11,7 +11,7 @@ public class PlayerTurn : State
     public override IEnumerator EnterState()
     {
         
-        //DO UI STUFF PLAYER TURN
+        BattleSystem.UI.SetText("Choose an ability!");
         
         if (!BattleSystem.Player.AffectedByEffect) return base.EnterState(); //If the player is not affected by a status effect, we just yield return from base.
         
@@ -23,7 +23,6 @@ public class PlayerTurn : State
     public override IEnumerator UseAbility(AbilityBase ability)
     {
         //DO UI STUFF PLAYER USES ABILITY
-        Debug.Log("HELLOOOOO");
         switch (ability.abilityType) //Checks the ability's type and calls the DoAbility Function passing to the entities functions.
         {
             case AbilityType.HEAL:
@@ -38,7 +37,10 @@ public class PlayerTurn : State
             default:
                 throw new ArgumentOutOfRangeException();
         }
-
+        
+        BattleSystem.UI.SetText(BattleSystem.Player.Stats.entityName + " uses " + ability.abilityName + "!");
+        //BattleSystem.UI.SpawnFloatingDamage();
+        
         yield return new WaitForSeconds(2f); // We could change it until the animation of the ability is complete instead of a fixed time amount.
         
         if (!BattleSystem.Enemy.CheckIfAlive()) //If the enemy is not alive anymore, player won.

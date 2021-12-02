@@ -10,6 +10,7 @@ public class BeginBattle : State
     public override IEnumerator EnterState()
     {
         //DO UI STUFF
+        BattleSystem.UI.SetText("A new " + BattleSystem.Enemy.Stats.entityName + " emerges out of the bath!");
         
         yield return new WaitForSeconds(2f);
         

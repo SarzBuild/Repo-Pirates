@@ -1,10 +1,12 @@
+using UnityEngine;
+
 public class DestroyAfterTimeAmount : SelfDestroy
 {
-    public float Seconds;
+    [SerializeField] public float Seconds;
     
     private void OnEnable()
     {
-        if (transform.parent != null) transform.parent = null;
+        //if (transform.parent != null) transform.parent = null;
         StartCoroutine(DestroyAfterTimeAmount(Seconds,gameObject));
     }
 }

@@ -19,7 +19,7 @@ public class CombatantController : MonoBehaviour
     
     public void Damaged(int value)
     {
-        HealthModifier(-value + CritHandling.CheckCrit(value, Stats.physicalPower));
+        HealthModifier(-value + -CritHandling.CheckCrit(value, Stats.physicalPower));
     }
 
     public void Heal(int value)

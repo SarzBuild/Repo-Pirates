@@ -5,17 +5,16 @@ public class BattleSystem : StateMachine
     //Variables
     [SerializeField] private CombatantController player;
     [SerializeField] private CombatantController enemy;
-    [SerializeField] private GUI ui;
 
     //Public accessors for the states.
     public CombatantController Player => player;
     public CombatantController Enemy => enemy;
-    public GUI UI => ui;
+    public GUI UI => GUI.Instance;
 
     private void Start()
     {
         Player.Stats.currentHealth = Player.Stats.maxHealth;
-        //Enemy.stats.currentHealth = Enemy.stats.maxHealth;
+        Enemy.Stats.currentHealth = Enemy.Stats.maxHealth;
         Initialize(new BeginBattle(this));
     }
 
