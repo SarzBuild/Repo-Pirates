@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine;
 
 public class Won : State
 {
@@ -8,7 +9,7 @@ public class Won : State
 
     public override IEnumerator EnterState()
     {
-        //DO UI STUFF
+        BattleSystem.UI.SetEndMessage("You won!", Color.green);
         return base.EnterState();
     }
 }

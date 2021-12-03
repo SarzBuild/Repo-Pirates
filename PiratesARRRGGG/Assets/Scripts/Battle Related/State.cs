@@ -18,6 +18,4 @@ public abstract class State
     {
         yield break;
     }
-    
-    
 }

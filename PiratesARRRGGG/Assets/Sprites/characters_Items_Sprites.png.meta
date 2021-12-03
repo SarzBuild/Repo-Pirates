@@ -16,7 +16,16 @@ TextureImporter:
     second: octopus
   - first:
       213: -7838830335954356315
-    second: octopus_bullet
+    second: characters_Items_Sprites_4
+  - first:
+      213: 1688176596739313784
+    second: characters_Items_Sprites_5
+  - first:
+      213: 3977962024038412906
+    second: characters_Items_Sprites_6
+  - first:
+      213: 7522375209503211921
+    second: characters_Items_Sprites_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,9 +118,9 @@ TextureImporter:
       name: pirate_ship
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 144
-        width: 64
+        width: 60
         height: 64
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -172,21 +181,16 @@ TextureImporter:
       name: octopus
       rect:
         serializedVersion: 2
-        x: 112
+        x: 114
         y: 144
-        width: 80
+        width: 76
         height: 64
-<<<<<<< Updated upstream
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-=======
       alignment: 7
       pivot: {x: 0.5, y: 0}
->>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 04703c4d4ff174ba0800000000000000
       internalID: -6104875633475385536
@@ -195,15 +199,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: octopus_bullet
+      name: characters_Items_Sprites_4
       rect:
         serializedVersion: 2
-        x: 131
-        y: 115
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 210
+        y: 144
+        width: 60
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,15 +220,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_ship
+      name: characters_Items_Sprites_5
       rect:
         serializedVersion: 2
-        x: 208
-        y: 144
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 259
+        y: 115
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_canonball
+      name: characters_Items_Sprites_6
       rect:
         serializedVersion: 2
         x: 228
@@ -258,10 +262,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_fireball
+      name: characters_Items_Sprites_7
       rect:
         serializedVersion: 2
-        x: 259
+        x: 131
         y: 115
         width: 9
         height: 9
@@ -281,7 +285,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 31743cf35a6fdb243ab7f89a4bb947dc
     internalID: 0
     vertices: []
     indices: 

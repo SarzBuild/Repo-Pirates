@@ -9,37 +9,42 @@ using UnityEngine.UI;
 public class GUI : MonoBehaviour
 {
     private static GUI _instance;
-    public static GUI Instance {
+
+    public static GUI Instance
+    {
         get
         {
             if (_instance != null) return _instance;
-            
+
             var singleton = FindObjectOfType<GUI>();
             if (singleton != null) return _instance;
-            
+
             var go = new GameObject();
             _instance = go.AddComponent<GUI>();
             return _instance;
         }
     }
 
-    [Header("Battle System Reference")]
-    [SerializeField] public BattleSystem BattleSystem;
-    
-    
+    [Header("Battle System Reference")] [SerializeField]
+    public BattleSystem BattleSystem;
+
+
     [SerializeField] public Transform PlayerTransfrom;
     [SerializeField] public Transform EnemyTransfrom;
-    
+
     [SerializeField] public GameObject Plate;
     [SerializeField] public GameObject FloatingText;
-    
+
     [SerializeField] public Transform MessageArea;
-    
+
     [SerializeField] public Transform Ability1;
     [SerializeField] public Transform Ability2;
     [SerializeField] public Transform Ability3;
     [SerializeField] public Transform Ability4;
-    
+
+    [SerializeField] public GameObject Menu;
+    [SerializeField] public GameObject MenuTextArea;
+
     [SerializeField] [HideInInspector] private TMP_Text _ability1Text;
     [SerializeField] [HideInInspector] private TMP_Text _ability2Text;
     [SerializeField] [HideInInspector] private TMP_Text _ability3Text;
@@ -55,6 +60,9 @@ public class GUI : MonoBehaviour
     [SerializeField] [HideInInspector] private float _tempCurrentHealthPlayer;
     [SerializeField] [HideInInspector] private float _tempCurrentHealthEnemy;
 
+    [SerializeField] [HideInInspector] private bool _menuOpened;
+    [SerializeField] [HideInInspector] private bool _lock;
+
 
     private void Awake()
     {
@@ -69,24 +77,28 @@ public class GUI : MonoBehaviour
         _ability3Text = Ability3.GetComponentInChildren<TMP_Text>();
         _ability4Text = Ability4.GetComponentInChildren<TMP_Text>();
         _messagetAreaText = MessageArea.GetComponentInChildren<TMP_Text>();
-        
-        SpawnPlates(PlayerTransfrom.position,_playerName, _playerHealthFill);
-        SpawnPlates(EnemyTransfrom.position,_enemyName, _enemyHealthFill);
+
+        SpawnPlates(PlayerTransfrom.position, _playerName, _playerHealthFill);
+        SpawnPlates(EnemyTransfrom.position, _enemyName, _enemyHealthFill);
     }
 
     private void Start()
     {
-        SetPlateNames(_playerName,BattleSystem.Player);
-        SetPlateNames(_enemyName,BattleSystem.Enemy);
+        SetPlateNames(_playerName, BattleSystem.Player);
+        SetPlateNames(_enemyName, BattleSystem.Enemy);
         _tempCurrentHealthEnemy = BattleSystem.Enemy.Stats.maxHealth;
         _tempCurrentHealthPlayer = BattleSystem.Player.Stats.maxHealth;
+        _lock = false;
+        Menu.SetActive(false);
     }
 
     private void Update()
     {
         CheckAbilitiesIndexPosition();
-        UpdateHealth(_tempCurrentHealthPlayer,BattleSystem.Player,_playerHealthFill);
-        UpdateHealth(_tempCurrentHealthEnemy,BattleSystem.Enemy,_enemyHealthFill);
+        UpdateHealth(_tempCurrentHealthPlayer, BattleSystem.Player, _playerHealthFill);
+        UpdateHealth(_tempCurrentHealthEnemy, BattleSystem.Enemy, _enemyHealthFill);
+        if(Input.GetKeyDown(KeyCode.Escape)) OpenMenu();
+        
     }
 
     private void CheckAbilitiesIndexPosition()
@@ -101,27 +113,29 @@ public class GUI : MonoBehaviour
     {
         if (BattleSystem.Player.Stats.ability[index] != null)
         {
-            if(!ability.gameObject.activeSelf) ability.gameObject.SetActive(true);
+            if (!ability.gameObject.activeSelf) ability.gameObject.SetActive(true);
             text.text = BattleSystem.Player.Stats.ability[index].abilityName;
         }
-        else if(BattleSystem.Player.Stats.ability[index] == null) ability.gameObject.SetActive(false);
+        else if (BattleSystem.Player.Stats.ability[index] == null) ability.gameObject.SetActive(false);
     }
 
-    private void SpawnPlates(Vector3 position,TMP_Text name, Image fill)
+    private void SpawnPlates(Vector3 position, TMP_Text name, Image fill)
     {
-        var offset = new Vector3(0, -0.25f, 0);
-        var tempObject = Instantiate(Plate,position + offset,quaternion.identity,transform);
+        var offset = new Vector3(0, 4.50f, 0);
+        var tempObject = Instantiate(Plate, position + offset, Quaternion.identity, transform);
         if (name == _playerName && fill == _playerHealthFill)
         {
             _playerName = tempObject.GetComponentInChildren<TMP_Text>();
             _playerHealthFill = tempObject.transform.GetChild(2).GetChild(1).GetComponent<Image>();
             return;
         }
+
         _enemyName = tempObject.GetComponentInChildren<TMP_Text>();
-        _enemyHealthFill = tempObject.transform.GetChild(2).GetChild(1).GetComponent<Image>(); 
+        _enemyHealthFill = tempObject.transform.GetChild(2).GetChild(1).GetComponent<Image>();
     }
 
-    private void SetPlateNames(TMP_Text name,CombatantController combatantName) => name.text = combatantName.Stats.entityName;
+    private void SetPlateNames(TMP_Text name, CombatantController combatantName) =>
+        name.text = combatantName.Stats.entityName;
 
     private void UpdateHealth(float tempVar, CombatantController entity, Image fill)
     {
@@ -135,9 +149,38 @@ public class GUI : MonoBehaviour
 
         _tempCurrentHealthEnemy = entity.Stats.currentHealth;
     }
-    
+
     public void SetText(string text) => _messagetAreaText.text = text;
 
-    public void SpawnFloatingDamage(Transform position, string text) => Instantiate(FloatingText, position.position, Quaternion.identity, transform).GetComponent<TMP_Text>().text = text;
+    public void SpawnFloatingDamage(Transform position, string text, Color32 color)
+    {
+        var tempObject = Instantiate(FloatingText, position.position, Quaternion.identity, transform)
+            .GetComponentInChildren<TMP_Text>();
+        tempObject.text = text;
+        tempObject.color = color;
+    }
+
+    public void SetEndMessage(string text, Color32 color)
+    {
+        _lock = true;
+        var tempObject = MenuTextArea.GetComponent<TMP_Text>();
+        tempObject.text = text;
+        tempObject.color = color;
+    }
+
+    private void OpenMenu()
+    {
+        if(_lock) return;
+        
+        if (_menuOpened)
+        {
+            Menu.SetActive(false);
+            _menuOpened = false;
+            return;
+        }
+        Menu.SetActive(true);
+        _menuOpened = true;
+    }
+
 
 }

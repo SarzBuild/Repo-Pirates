@@ -18,7 +18,7 @@ MonoBehaviour:
   physicalPower: 15
   magicPower: 15
   ability:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 32446362ee5eb1b46a4a72a5b34139ff, type: 2}
+  - {fileID: 11400000, guid: 819474d8f104a684a860f517f8469a29, type: 2}
+  - {fileID: 11400000, guid: 7e113ae6ca910dc49bb12f8e2133b2e9, type: 2}
+  - {fileID: 11400000, guid: fccdda579185daa43949a6c8509970bd, type: 2}

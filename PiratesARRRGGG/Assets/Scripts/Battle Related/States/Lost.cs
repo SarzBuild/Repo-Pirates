@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine;
 
 public class Lost : State
 {
@@ -8,7 +9,7 @@ public class Lost : State
 
     public override IEnumerator EnterState()
     {
-        //DO UI STUFF
+        BattleSystem.UI.SetEndMessage("You lost!", Color.red);
         return base.EnterState();
     }
 }

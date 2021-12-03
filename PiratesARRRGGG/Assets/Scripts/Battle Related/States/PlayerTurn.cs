@@ -4,43 +4,30 @@ using UnityEngine;
 
 public class PlayerTurn : State
 {
+    private bool _useOnce;
     public PlayerTurn(BattleSystem battleSystem) : base(battleSystem)
     {
     }
 
     public override IEnumerator EnterState()
     {
-        
+        _useOnce = false;
         BattleSystem.UI.SetText("Choose an ability!");
         
         if (!BattleSystem.Player.AffectedByEffect) return base.EnterState(); //If the player is not affected by a status effect, we just yield return from base.
         
-        BattleSystem.Player.Damaged(BattleSystem.Enemy.Stats.magicPower); //Otherwise the player gets attacked
-        BattleSystem.Player.EffectLastingTimeTurns--; //And the lasting time of the effect gets updated.
+        BattleSystem.ApplyEffectOnTurnBeginning(BattleSystem.Enemy.Stats.magicPower, BattleSystem.Player);
         return base.EnterState();
     }
     
     public override IEnumerator UseAbility(AbilityBase ability)
     {
-        //DO UI STUFF PLAYER USES ABILITY
-        switch (ability.abilityType) //Checks the ability's type and calls the DoAbility Function passing to the entities functions.
-        {
-            case AbilityType.HEAL:
-                BattleSystem.Player.Heal((int)ability.DoAbility());                
-                break;
-            case AbilityType.ATTACK:
-                BattleSystem.Enemy.Damaged((int)ability.DoAbility());
-                break;
-            case AbilityType.STATUSEFFECT:
-                BattleSystem.Enemy.SetStatusEffect((int)ability.DoAbility());
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-        
+        if (_useOnce) yield break;
+        _useOnce = true;
+        BattleSystem.StartCoroutine(BattleSystem.UseAbility(ability, BattleSystem.Player, BattleSystem.Enemy));
+
         BattleSystem.UI.SetText(BattleSystem.Player.Stats.entityName + " uses " + ability.abilityName + "!");
-        //BattleSystem.UI.SpawnFloatingDamage();
-        
+
         yield return new WaitForSeconds(2f); // We could change it until the animation of the ability is complete instead of a fixed time amount.
         
         if (!BattleSystem.Enemy.CheckIfAlive()) //If the enemy is not alive anymore, player won.
@@ -52,5 +39,4 @@ public class PlayerTurn : State
             BattleSystem.ChangeState(new EnemyTurn(BattleSystem));
         }
     }
-    
 }
