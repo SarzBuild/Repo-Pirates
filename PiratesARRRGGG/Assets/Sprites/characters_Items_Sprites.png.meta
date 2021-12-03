@@ -16,16 +16,28 @@ TextureImporter:
     second: octopus
   - first:
       213: -7838830335954356315
-    second: characters_Items_Sprites_4
+    second: enemyship
   - first:
       213: 1688176596739313784
-    second: characters_Items_Sprites_5
+    second: enemyship_fireball
   - first:
       213: 3977962024038412906
-    second: characters_Items_Sprites_6
+    second: enemyship_canonball
   - first:
       213: 7522375209503211921
-    second: characters_Items_Sprites_7
+    second: octopus_fireball
+  - first:
+      213: -3012267956245848644
+    second: octopus_pearlball
+  - first:
+      213: 9178530226328317459
+    second: pirate_pierce
+  - first:
+      213: -7124610806032272504
+    second: octopus_pierce
+  - first:
+      213: 5736160101560860012
+    second: enemyship_pierce
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -199,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characters_Items_Sprites_4
+      name: enemyship
       rect:
         serializedVersion: 2
         x: 210
@@ -220,7 +232,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characters_Items_Sprites_5
+      name: enemyship_fireball
       rect:
         serializedVersion: 2
         x: 259
@@ -228,7 +240,7 @@ TextureImporter:
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,7 +253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characters_Items_Sprites_6
+      name: enemyship_canonball
       rect:
         serializedVersion: 2
         x: 228
@@ -249,7 +261,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,15 +274,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: characters_Items_Sprites_7
+      name: octopus_fireball
       rect:
         serializedVersion: 2
-        x: 131
+        x: 163
         y: 115
         width: 9
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,6 +290,90 @@ TextureImporter:
       bones: []
       spriteID: 191c4a5d568d46860800000000000000
       internalID: 7522375209503211921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: octopus_pearlball
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 116
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd9ca3e0464236d0800000000000000
+      internalID: -3012267956245848644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_pierce
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 48
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e2c746c90b06f70800000000000000
+      internalID: 9178530226328317459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: octopus_pierce
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 48
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883798f383c402d90800000000000000
+      internalID: -7124610806032272504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyship_pierce
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 32
+        width: 48
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6dbd4c883fea9f40800000000000000
+      internalID: 5736160101560860012
       vertices: []
       indices: 
       edges: []
