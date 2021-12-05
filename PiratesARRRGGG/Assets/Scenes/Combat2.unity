@@ -619,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &787497486216338695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1234,7 +1234,7 @@ PrefabInstance:
       objectReference: {fileID: 1568294953}
     - target: {fileID: 2224276261335448706, guid: adcce7638e46ea546b234ed60c0c9efd, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4572398434288325716, guid: adcce7638e46ea546b234ed60c0c9efd, type: 3}
       propertyPath: m_Name

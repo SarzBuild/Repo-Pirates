@@ -17,4 +17,4 @@ MonoBehaviour:
   abilityType: 0
   Damage: 10
   VFX: {fileID: 0}
-  Animation: {fileID: 3718703092262339456, guid: 170b3e9293cbeee4983f989b5e948507, type: 3}
+  Animation: {fileID: 3718703092262339456, guid: b80f5d8ca22f364498394f97026d2495, type: 3}
