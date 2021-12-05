@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d38eae1ab3030942a1efe644fac9652, type: 3}
+  m_Name: BallAbility
+  m_EditorClassIdentifier: 
+  abilityName: Cannon
+  icon: {fileID: 0}
+  abilityType: 0
+  Damage: 10
+  VFX: {fileID: 1095809974678954077, guid: 6d8d57132f6db6c4ea924c81b99c672c, type: 3}
+  Animation: {fileID: 4916225229724470746, guid: 2ddba66d54280424ea21c2d61995a0c1, type: 3}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc9a55f17ba7c74c9f1f7e38da01bd0, type: 3}
+  m_Name: FireAbility
+  m_EditorClassIdentifier: 
+  abilityName: Fire Ball
+  icon: {fileID: 0}
+  abilityType: 2
+  Damage: 10
+  VFX: {fileID: 1095809974678954077, guid: 10a2e87de1ef50e4e943dbfabba8e7f4, type: 3}
+  Animation: {fileID: 3851442688306419741, guid: 0a981863f48d13d44b8c10ff31cd2780, type: 3}

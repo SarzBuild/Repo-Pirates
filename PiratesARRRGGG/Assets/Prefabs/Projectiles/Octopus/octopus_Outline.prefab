@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2801455332260720151}
   - component: {fileID: 4010812055012105857}
   m_Layer: 0
-  m_Name: ShipOutline
+  m_Name: octopus_Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 9a596992ce2f89f48bf4cb6fbd262895, type: 3}
+  m_Sprite: {fileID: 5736160101560860012, guid: 3fa96bd1a99a13748a4ea79e3d718517, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,9 +93,9 @@ Animation:
   m_GameObject: {fileID: 3718703092262339456}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: c76b108844ed68c4c9aaddf2d8d955a0, type: 2}
+  m_Animation: {fileID: 7400000, guid: 15c4d2df00dfe6d44a8ea0b7c2e633f9, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: c76b108844ed68c4c9aaddf2d8d955a0, type: 2}
+  - {fileID: 7400000, guid: 15c4d2df00dfe6d44a8ea0b7c2e633f9, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

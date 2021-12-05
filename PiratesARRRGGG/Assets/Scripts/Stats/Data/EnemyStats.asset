@@ -18,7 +18,7 @@ MonoBehaviour:
   physicalPower: 10
   magicPower: 10
   ability:
-  - {fileID: 11400000, guid: 32446362ee5eb1b46a4a72a5b34139ff, type: 2}
-  - {fileID: 11400000, guid: 819474d8f104a684a860f517f8469a29, type: 2}
-  - {fileID: 11400000, guid: 7e113ae6ca910dc49bb12f8e2133b2e9, type: 2}
-  - {fileID: 11400000, guid: fccdda579185daa43949a6c8509970bd, type: 2}
+  - {fileID: 11400000, guid: 4a66276b6c092794a965a58a7ba36c53, type: 2}
+  - {fileID: 11400000, guid: 43becb24498b231409ead3f1aea8566b, type: 2}
+  - {fileID: 11400000, guid: 8b608955785c9124cb8a8a6d1bfbc4c8, type: 2}
+  - {fileID: 11400000, guid: 31c7bade74c84ba43824de8957b1d5c2, type: 2}
