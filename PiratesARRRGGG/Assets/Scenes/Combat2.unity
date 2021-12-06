@@ -1134,6 +1134,7 @@ MonoBehaviour:
   EnemyTransfrom: {fileID: 787497485997559960}
   Plate: {fileID: 6469231632964089329, guid: 43f440d6ceb4b2246bcb84036133e7f5, type: 3}
   FloatingText: {fileID: 4928262818999915438, guid: 4b0280f6a41524740921e908d0a54847, type: 3}
+  Offset: {x: 0, y: 0, z: 0}
   MessageArea: {fileID: 787497487921652569}
   Ability1: {fileID: 787497487359714366}
   Ability2: {fileID: 787497487683370038}
@@ -3303,7 +3304,7 @@ PrefabInstance:
       objectReference: {fileID: 1568294953}
     - target: {fileID: 9172955787142179942, guid: bb56e625daa505c49b57559a4a44674b, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb56e625daa505c49b57559a4a44674b, type: 3}

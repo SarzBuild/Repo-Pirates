@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5855b19af705c49448a151ef5de644e3, type: 3}
   m_Name: EnemyStats
   m_EditorClassIdentifier: 
-  entityName: Player
+  entityName: Pirates
   maxHealth: 150
-  currentHealth: 150
+  currentHealth: 100
   physicalPower: 10
   magicPower: 10
   ability:
