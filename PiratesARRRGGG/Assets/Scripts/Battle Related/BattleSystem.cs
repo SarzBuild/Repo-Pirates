@@ -53,7 +53,7 @@ public class BattleSystem : StateMachine
 
     public void ApplyEffectOnTurnBeginning(int value, CombatantController user)
     {
-        user.Damaged(value / value*2); //Otherwise the player gets attacked
+        user.Damaged(value / (value*2)); //Otherwise the player gets attacked
         user.EffectLastingTimeTurns--; //And the lasting time of the effect gets updated.
     }
 }
