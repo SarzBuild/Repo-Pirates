@@ -12,21 +12,21 @@ public class EnemyTurn : State
 
     public override IEnumerator EnterState()
     {
-        if (BattleSystem.Enemy.AffectedByEffect) BattleSystem.ApplyEffectOnTurnBeginning(BattleSystem.Player.Stats.magicPower, BattleSystem.Enemy);
+        if (BattleSystem.Enemy.AffectedByEffect) BattleSystem.ApplyEffectOnTurnBeginning(BattleSystem.Player.Stats.MagicPower, BattleSystem.Enemy);
 
-        BattleSystem.UI.SetText(BattleSystem.Enemy.Stats.entityName + " fights back!");
+        BattleSystem.UI.SetText(BattleSystem.Enemy.Stats.EntityName + " fights back!");
         
         yield return new WaitForSeconds(2f);
-        if (BattleSystem.Enemy.Stats.currentHealth < 40 && _healCounter <= 1)
+        if (BattleSystem.Enemy.Stats.CurrentHealth < 40 && _healCounter <= 1)
         {
-            BattleSystem.StartCoroutine(BattleSystem.UseAbility(BattleSystem.Enemy.Stats.ability[0], BattleSystem.Enemy, BattleSystem.Player));
-            SendText(BattleSystem.Enemy.Stats.ability[0]);
+            BattleSystem.StartCoroutine(BattleSystem.UseAbility(BattleSystem.Enemy.Stats.Abilities[0], BattleSystem.Enemy, BattleSystem.Player));
+            SendText(BattleSystem.Enemy.Stats.Abilities[0]);
             _healCounter--;
         }
-        else if (BattleSystem.Enemy.Stats.currentHealth < 120 && _statusEffectCounter <= 1)
+        else if (BattleSystem.Enemy.Stats.CurrentHealth < 120 && _statusEffectCounter <= 1)
         {
-            BattleSystem.StartCoroutine(BattleSystem.UseAbility(BattleSystem.Enemy.Stats.ability[1], BattleSystem.Enemy, BattleSystem.Player));
-            SendText(BattleSystem.Enemy.Stats.ability[1]);
+            BattleSystem.StartCoroutine(BattleSystem.UseAbility(BattleSystem.Enemy.Stats.Abilities[1], BattleSystem.Enemy, BattleSystem.Player));
+            SendText(BattleSystem.Enemy.Stats.Abilities[1]);
             _statusEffectCounter--;
         }
         else
@@ -35,12 +35,12 @@ public class EnemyTurn : State
             switch (random)
             {
                 case 0:
-                    BattleSystem.StartCoroutine(BattleSystem.UseAbility(BattleSystem.Enemy.Stats.ability[2], BattleSystem.Enemy, BattleSystem.Player));
-                    SendText(BattleSystem.Enemy.Stats.ability[2]);
+                    BattleSystem.StartCoroutine(BattleSystem.UseAbility(BattleSystem.Enemy.Stats.Abilities[2], BattleSystem.Enemy, BattleSystem.Player));
+                    SendText(BattleSystem.Enemy.Stats.Abilities[2]);
                     break;
                 case 1:
-                    BattleSystem.StartCoroutine(BattleSystem.UseAbility(BattleSystem.Enemy.Stats.ability[3], BattleSystem.Enemy, BattleSystem.Player));
-                    SendText(BattleSystem.Enemy.Stats.ability[3]);
+                    BattleSystem.StartCoroutine(BattleSystem.UseAbility(BattleSystem.Enemy.Stats.Abilities[3], BattleSystem.Enemy, BattleSystem.Player));
+                    SendText(BattleSystem.Enemy.Stats.Abilities[3]);
                     break;
             }
         }
@@ -58,5 +58,5 @@ public class EnemyTurn : State
         }
     }
 
-    private void SendText(AbilityBase ability) => BattleSystem.UI.SetText(BattleSystem.Enemy.Stats.entityName + " uses " + ability.abilityName + "!");
+    private void SendText(AbilityBase ability) => BattleSystem.UI.SetText(BattleSystem.Enemy.Stats.EntityName + " uses " + ability.AbilityName + "!");
 }

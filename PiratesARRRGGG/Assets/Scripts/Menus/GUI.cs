@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,8 +83,8 @@ public class GUI : MonoBehaviour
     {
         SetPlateNames(_playerName, BattleSystem.Player);
         SetPlateNames(_enemyName, BattleSystem.Enemy);
-        _tempCurrentHealthEnemy = BattleSystem.Enemy.Stats.maxHealth;
-        _tempCurrentHealthPlayer = BattleSystem.Player.Stats.maxHealth;
+        _tempCurrentHealthEnemy = BattleSystem.Enemy.Stats.MaxHealth;
+        _tempCurrentHealthPlayer = BattleSystem.Player.Stats.MaxHealth;
         _lock = false;
         Menu.SetActive(false);
     }
@@ -112,12 +108,12 @@ public class GUI : MonoBehaviour
 
     private void CheckAbility(Transform ability, int index, TMP_Text text)
     {
-        if (BattleSystem.Player.Stats.ability[index] != null)
+        if (BattleSystem.Player.Stats.Abilities[index] != null)
         {
             if (!ability.gameObject.activeSelf) ability.gameObject.SetActive(true);
-            text.text = BattleSystem.Player.Stats.ability[index].abilityName;
+            text.text = BattleSystem.Player.Stats.Abilities[index].AbilityName;
         }
-        else if (BattleSystem.Player.Stats.ability[index] == null) ability.gameObject.SetActive(false);
+        else if (BattleSystem.Player.Stats.Abilities[index] == null) ability.gameObject.SetActive(false);
     }
 
     private void SpawnPlates(Vector3 position, TMP_Text name, Image fill)
@@ -135,19 +131,19 @@ public class GUI : MonoBehaviour
     }
 
     private void SetPlateNames(TMP_Text name, CombatantController combatantName) =>
-        name.text = combatantName.Stats.entityName;
+        name.text = combatantName.Stats.EntityName;
 
     private void UpdateHealth(float tempVar, CombatantController entity, Image fill)
     {
-        if (tempVar == entity.Stats.currentHealth) return;
-        fill.fillAmount = Mathf.Clamp01(Mathf.InverseLerp(0, entity.Stats.maxHealth, entity.Stats.currentHealth));
+        if (tempVar == entity.Stats.CurrentHealth) return;
+        fill.fillAmount = Mathf.Clamp01(Mathf.InverseLerp(0, entity.Stats.MaxHealth, entity.Stats.CurrentHealth));
         if (tempVar == _tempCurrentHealthPlayer)
         {
-            _tempCurrentHealthPlayer = entity.Stats.currentHealth;
+            _tempCurrentHealthPlayer = entity.Stats.CurrentHealth;
             return;
         }
 
-        _tempCurrentHealthEnemy = entity.Stats.currentHealth;
+        _tempCurrentHealthEnemy = entity.Stats.CurrentHealth;
     }
 
     public void SetText(string text) => _messagetAreaText.text = text;

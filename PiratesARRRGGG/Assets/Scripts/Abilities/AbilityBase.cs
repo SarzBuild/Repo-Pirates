@@ -12,9 +12,9 @@ public enum AbilityType { ATTACK, HEAL, STATUSEFFECT }
 public abstract class AbilityBase : ScriptableObject
 {
     //Inherited variables
-    public string abilityName;
-    public Sprite icon;
-    public AbilityType abilityType;
+    public string AbilityName;
+    public Sprite Icon;
+    public AbilityType AbilityType;
 
     public float Damage;
     public GameObject VFX;

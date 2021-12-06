@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CritHandling : MonoBehaviour
 {
-    private int critMultiplier;
+    private int _critMultiplier;
     
     public int CheckCrit(int abilityPower, int chancesModifier)
     {
@@ -20,7 +20,7 @@ public class CritHandling : MonoBehaviour
     private int SetMultiplier(int power)
     {
         //Just a tables returning out values depending on the abilities' strength 
-        critMultiplier = power switch
+        _critMultiplier = power switch
         {
             var n when (n > 0 && n <= 2) => 1,
             var n when (n > 2 && n <= 4) => 2,
@@ -28,8 +28,8 @@ public class CritHandling : MonoBehaviour
             var n when (n > 6 && n <= 8) => 4,
             var n when (n > 8 && n <= 10) => 5,
             var n when (n > 10) => 6,
-            _ => critMultiplier
+            _ => _critMultiplier
         };
-        return critMultiplier;
+        return _critMultiplier;
     }
 }

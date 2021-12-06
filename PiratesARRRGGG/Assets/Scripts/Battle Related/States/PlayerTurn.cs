@@ -16,7 +16,7 @@ public class PlayerTurn : State
         
         if (!BattleSystem.Player.AffectedByEffect) return base.EnterState(); //If the player is not affected by a status effect, we just yield return from base.
         
-        BattleSystem.ApplyEffectOnTurnBeginning(BattleSystem.Enemy.Stats.magicPower, BattleSystem.Player);
+        BattleSystem.ApplyEffectOnTurnBeginning(BattleSystem.Enemy.Stats.MagicPower, BattleSystem.Player);
         return base.EnterState();
     }
     
@@ -26,7 +26,7 @@ public class PlayerTurn : State
         _useOnce = true;
         BattleSystem.StartCoroutine(BattleSystem.UseAbility(ability, BattleSystem.Player, BattleSystem.Enemy));
 
-        BattleSystem.UI.SetText(BattleSystem.Player.Stats.entityName + " uses " + ability.abilityName + "!");
+        BattleSystem.UI.SetText(BattleSystem.Player.Stats.EntityName + " uses " + ability.AbilityName + "!");
 
         yield return new WaitForSeconds(2f); // We could change it until the animation of the ability is complete instead of a fixed time amount.
         

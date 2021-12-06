@@ -4,14 +4,14 @@ using UnityEngine;
 public class StatsSO : ScriptableObject
 {
     //Combatant stats
-    [SerializeField] public string entityName;
-    [SerializeField] public int maxHealth;
-    [SerializeField] public int currentHealth;
-    [SerializeField] public int physicalPower;
-    [SerializeField] public int magicPower;
+    [SerializeField] public string EntityName;
+    [SerializeField] public int MaxHealth;
+    [SerializeField] public int CurrentHealth;
+    [SerializeField] public int PhysicalPower;
+    [SerializeField] public int MagicPower;
     
     //Combatant abilities list
-    [SerializeField] public AbilityBase[] ability;
+    [SerializeField] public AbilityBase[] Abilities;
     
 
 }
