@@ -28,12 +28,13 @@ public class GUI : MonoBehaviour
     [Header("Battle System Reference")] [SerializeField]
     public BattleSystem BattleSystem;
 
-
+    
     [SerializeField] public Transform PlayerTransfrom;
     [SerializeField] public Transform EnemyTransfrom;
 
     [SerializeField] public GameObject Plate;
     [SerializeField] public GameObject FloatingText;
+    [SerializeField] public Vector3 Offset;
 
     [SerializeField] public Transform MessageArea;
 
@@ -121,8 +122,7 @@ public class GUI : MonoBehaviour
 
     private void SpawnPlates(Vector3 position, TMP_Text name, Image fill)
     {
-        var offset = new Vector3(0, 4.50f, 0);
-        var tempObject = Instantiate(Plate, position + offset, Quaternion.identity, transform);
+        var tempObject = Instantiate(Plate, position + Offset, Quaternion.identity, transform);
         if (name == _playerName && fill == _playerHealthFill)
         {
             _playerName = tempObject.GetComponentInChildren<TMP_Text>();

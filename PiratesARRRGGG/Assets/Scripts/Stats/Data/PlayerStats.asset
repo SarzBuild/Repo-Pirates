@@ -15,8 +15,8 @@ MonoBehaviour:
   entityName: Player
   maxHealth: 150
   currentHealth: 150
-  physicalPower: 51
-  magicPower: 204
+  physicalPower: 10
+  magicPower: 10
   ability:
   - {fileID: 11400000, guid: 32446362ee5eb1b46a4a72a5b34139ff, type: 2}
   - {fileID: 11400000, guid: 819474d8f104a684a860f517f8469a29, type: 2}
