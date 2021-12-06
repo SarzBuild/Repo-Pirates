@@ -16,5 +16,5 @@ MonoBehaviour:
   Icon: {fileID: 0}
   AbilityType: 2
   Damage: 10
-  VFX: {fileID: 1095809974678954077, guid: 10a2e87de1ef50e4e943dbfabba8e7f4, type: 3}
+  VFX: {fileID: 1095809974678954077, guid: 56ade029a6b7f074c9d97b77e735b3a0, type: 3}
   Animation: {fileID: 3851442688306419741, guid: 440c65f92ca0faa488ab4e0bc5fbc332, type: 3}

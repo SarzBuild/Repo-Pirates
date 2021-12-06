@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1095809974678954079}
   - component: {fileID: 1095809974678954078}
   m_Layer: 0
-  m_Name: octopus_BOOM
+  m_Name: enemy_fire_vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095809974678954077}
   m_LocalRotation: {x: -0.6405614, y: 0.29946807, z: -0.29946807, w: 0.6405614}
-  m_LocalPosition: {x: 4.85, y: 0.91, z: -2.376151}
+  m_LocalPosition: {x: 5.262, y: 0.897, z: -2.376151}
   m_LocalScale: {x: 0.02293949, y: 0.02293949, z: 0.02293949}
   m_Children: []
   m_Father: {fileID: 0}
@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.31910825, g: 0.86489475, b: 0.9528302, a: 1}
+      maxColor: {r: 0.94117653, g: 0.6784314, b: 0.5137255, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
