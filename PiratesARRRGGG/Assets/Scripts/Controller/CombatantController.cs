@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class CombatantController : MonoBehaviour
 {
@@ -37,6 +38,8 @@ public class CombatantController : MonoBehaviour
         AffectedByEffect = true;
         EffectLastingTimeTurns = magicPower;
     }
-
-    //make a new animation function for receiving damage
+    public void PlayDamageAnimation()
+    {
+        transform.DOShakePosition(0.8f, 3f, 20, 30f, false, false).SetDelay(0.75f);
+    }
 }
