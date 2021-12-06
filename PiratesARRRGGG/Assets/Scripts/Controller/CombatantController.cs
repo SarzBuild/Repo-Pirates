@@ -9,27 +9,27 @@ public class CombatantController : MonoBehaviour
     [SerializeField] public bool AffectedByEffect = false;
     [SerializeField] public int EffectLastingTimeTurns;
     
-    public bool CheckIfAlive() => Stats.currentHealth >= 0;
+    public bool CheckIfAlive() => Stats.CurrentHealth >= 0;
 
     private void HealthModifier(int value) //The actual function 
     {
-        Stats.currentHealth += value;
+        Stats.CurrentHealth += value;
         if(value < 0) UI.SpawnFloatingDamage(transform, value.ToString(), Color.red);
         if(value > 0) UI.SpawnFloatingDamage(transform, value.ToString(), Color.green);
         if(value == 0) UI.SpawnFloatingDamage(transform,"Missed!", Color.white);
 
-        if (Stats.currentHealth >= Stats.maxHealth) Stats.currentHealth = Stats.maxHealth;
-        if (Stats.currentHealth <= 0) Stats.currentHealth = 0;
+        if (Stats.CurrentHealth >= Stats.MaxHealth) Stats.CurrentHealth = Stats.MaxHealth;
+        if (Stats.CurrentHealth <= 0) Stats.CurrentHealth = 0;
     }
     
     public void Damaged(int value)
     {
-        HealthModifier(-value + -CritHandling.CheckCrit(value, Stats.physicalPower) + -Stats.physicalPower);
+        HealthModifier(-value + -CritHandling.CheckCrit(value, Stats.PhysicalPower) + -Stats.PhysicalPower);
     }
 
     public void Heal(int value)
     {
-        HealthModifier(value + CritHandling.CheckCrit(value, Stats.magicPower) + Stats.magicPower);
+        HealthModifier(value + CritHandling.CheckCrit(value, Stats.MagicPower) + Stats.MagicPower);
     }
 
     public void SetStatusEffect(int magicPower)

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleSystem : StateMachine
@@ -16,8 +15,8 @@ public class BattleSystem : StateMachine
 
     private void Start()
     {
-        Player.Stats.currentHealth = Player.Stats.maxHealth;
-        Enemy.Stats.currentHealth = Enemy.Stats.maxHealth;
+        Player.Stats.CurrentHealth = Player.Stats.MaxHealth;
+        Enemy.Stats.CurrentHealth = Enemy.Stats.MaxHealth;
         Initialize(new BeginBattle(this));
     }
 
@@ -28,14 +27,14 @@ public class BattleSystem : StateMachine
 
     public void OnButtonInteraction(int index)
     {
-        if (index > Player.Stats.ability.Length) return;
-        StartCoroutine(CurrentState.UseAbility(Player.Stats.ability[index]));
+        if (index > Player.Stats.Abilities.Length) return;
+        StartCoroutine(CurrentState.UseAbility(Player.Stats.Abilities[index]));
     }
 
     public IEnumerator UseAbility(AbilityBase ability, CombatantController user, CombatantController target)
     {
-        Debug.Log(user.Stats.entityName + ability.abilityName + ability.abilityType);
-        switch (ability.abilityType) //Checks the ability's type and calls the DoAbility Function passing to the entities functions.
+        Debug.Log(user.Stats.EntityName + ability.AbilityName + ability.AbilityType);
+        switch (ability.AbilityType) //Checks the ability's type and calls the DoAbility Function passing to the entities functions.
         {
             case AbilityType.HEAL:
                 user.Heal((int)ability.DoAbility());
