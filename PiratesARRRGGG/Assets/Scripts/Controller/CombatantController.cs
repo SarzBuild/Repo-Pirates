@@ -37,4 +37,6 @@ public class CombatantController : MonoBehaviour
         AffectedByEffect = true;
         EffectLastingTimeTurns = magicPower;
     }
+
+    //make a new animation function for receiving damage
 }

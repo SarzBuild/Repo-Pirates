@@ -385,10 +385,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 757213001}
     - target: {fileID: 4655976772058156297, guid: 978a3d47421aa254e9a6b6e72c20b07d, type: 3}
-      propertyPath: Offset.y
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655976772058156297, guid: 978a3d47421aa254e9a6b6e72c20b07d, type: 3}
       propertyPath: BattleSystem
       value: 
       objectReference: {fileID: 757213002}

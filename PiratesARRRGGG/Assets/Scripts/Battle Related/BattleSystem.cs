@@ -42,6 +42,7 @@ public class BattleSystem : StateMachine
                 yield break;
             case AbilityType.ATTACK:
                 target.Damaged((int)ability.DoAbility());
+                //target.PlayDamageAnimation(); //for the feedback of damage
                 yield break;
             case AbilityType.STATUSEFFECT:
                 target.SetStatusEffect((int)ability.DoAbility());
