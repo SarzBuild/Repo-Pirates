@@ -13,10 +13,14 @@ public class BattleSystem : StateMachine
     public CombatantController Enemy => enemy;
     public GUI UI => GUI.Instance;
 
-    private void Start()
+    private void Awake()
     {
         Player.Stats.CurrentHealth = Player.Stats.MaxHealth;
         Enemy.Stats.CurrentHealth = Enemy.Stats.MaxHealth;
+    }
+    
+    private void Start()
+    {
         Initialize(new BeginBattle(this));
     }
 
@@ -40,8 +44,7 @@ public class BattleSystem : StateMachine
                 user.Heal((int)ability.DoAbility());
                 yield break;
             case AbilityType.ATTACK:
-                target.Damaged((int)ability.DoAbility());
-                //target.PlayDamageAnimation(); //for the feedback of damage
+                target.Damaged((int)ability.DoAbility()); //target.PlayDamageAnimation(); //for the feedback of damage
                 yield break;
             case AbilityType.STATUSEFFECT:
                 target.SetStatusEffect((int)ability.DoAbility());

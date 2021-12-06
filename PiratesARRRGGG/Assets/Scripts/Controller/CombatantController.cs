@@ -9,7 +9,7 @@ public class CombatantController : MonoBehaviour
     [SerializeField] public bool AffectedByEffect = false;
     [SerializeField] public int EffectLastingTimeTurns;
     
-    public bool CheckIfAlive() => Stats.CurrentHealth >= 0;
+    public bool CheckIfAlive() => Stats.CurrentHealth > 0;
 
     private void HealthModifier(int value) //The actual function 
     {

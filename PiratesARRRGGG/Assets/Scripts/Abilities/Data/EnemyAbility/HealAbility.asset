@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Heal
   Icon: {fileID: 0}
-  AbilityType: 0
+  AbilityType: 1
   Damage: 10
   VFX: {fileID: 1066636361181457809, guid: 62ef2711d75a409408fc1a2ed6a333c7, type: 3}
   Animation: {fileID: 0}

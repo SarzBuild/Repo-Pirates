@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -135,14 +136,10 @@ public class GUI : MonoBehaviour
 
     private void UpdateHealth(float tempVar, CombatantController entity, Image fill)
     {
-        if (tempVar == entity.Stats.CurrentHealth) return;
+        if (Math.Abs(tempVar - entity.Stats.CurrentHealth) < 1) return;
         fill.fillAmount = Mathf.Clamp01(Mathf.InverseLerp(0, entity.Stats.MaxHealth, entity.Stats.CurrentHealth));
-        if (tempVar == _tempCurrentHealthPlayer)
-        {
-            _tempCurrentHealthPlayer = entity.Stats.CurrentHealth;
-            return;
-        }
-
+        
+        _tempCurrentHealthPlayer = entity.Stats.CurrentHealth;
         _tempCurrentHealthEnemy = entity.Stats.CurrentHealth;
     }
 
@@ -158,6 +155,7 @@ public class GUI : MonoBehaviour
 
     public void SetEndMessage(string text, Color32 color)
     {
+        OpenMenu();
         _lock = true;
         var tempObject = MenuTextArea.GetComponent<TMP_Text>();
         tempObject.text = text;
