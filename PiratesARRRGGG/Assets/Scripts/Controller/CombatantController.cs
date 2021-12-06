@@ -9,7 +9,8 @@ public class CombatantController : MonoBehaviour
     public GUI UI => GUI.Instance;
     [SerializeField] public bool AffectedByEffect = false;
     [SerializeField] public int EffectLastingTimeTurns;
-    
+
+
     public bool CheckIfAlive() => Stats.CurrentHealth > 0;
 
     private void HealthModifier(int value) //The actual function 
@@ -41,5 +42,15 @@ public class CombatantController : MonoBehaviour
     public void PlayDamageAnimation()
     {
         transform.DOShakePosition(0.8f, 3f, 20, 30f, false, false).SetDelay(0.75f);
+    }
+
+    public void PlayFloatingAnimation()
+    {
+        transform.DOShakePosition(1f, new Vector3(3f, 3f, 0f), 1, 50f, false, false).SetLoops(-1, LoopType.Restart); ;
+    }
+
+    private void Start()
+    {
+        PlayFloatingAnimation();
     }
 }
