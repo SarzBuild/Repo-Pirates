@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5855b19af705c49448a151ef5de644e3, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  entityName: Player
-  maxHealth: 150
-  currentHealth: 150
-  physicalPower: 10
-  magicPower: 10
-  ability:
+  EntityName: Player
+  MaxHealth: 150
+  CurrentHealth: 150
+  PhysicalPower: 10
+  MagicPower: 10
+  Abilities:
   - {fileID: 11400000, guid: 32446362ee5eb1b46a4a72a5b34139ff, type: 2}
   - {fileID: 11400000, guid: 819474d8f104a684a860f517f8469a29, type: 2}
   - {fileID: 11400000, guid: 7e113ae6ca910dc49bb12f8e2133b2e9, type: 2}

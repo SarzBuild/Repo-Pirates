@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973cbf1aa01c59f468e3143f0117c824, type: 3}
   m_Name: PierceAbility
   m_EditorClassIdentifier: 
-  abilityName: Pierce
-  icon: {fileID: 0}
-  abilityType: 0
+  AbilityName: Pierce
+  Icon: {fileID: 0}
+  AbilityType: 0
   Damage: 10
   VFX: {fileID: 0}
   Animation: {fileID: 3718703092262339456, guid: f6b846a7f145879418018b6e0b6672f4, type: 3}

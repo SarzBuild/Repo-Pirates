@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5855b19af705c49448a151ef5de644e3, type: 3}
   m_Name: OctopusStats
   m_EditorClassIdentifier: 
-  entityName: Lord of the deep
-  maxHealth: 250
-  currentHealth: 250
-  physicalPower: 15
-  magicPower: 15
-  ability:
+  EntityName: Lord of the Deep
+  MaxHealth: 250
+  CurrentHealth: 250
+  PhysicalPower: 15
+  MagicPower: 15
+  Abilities:
   - {fileID: 11400000, guid: 634b8791c24428148ba468f6e597184f, type: 2}
   - {fileID: 11400000, guid: 70d1577c7199d3c41ae267967ee7030a, type: 2}
   - {fileID: 11400000, guid: 92e44ee36c410a44d8a237d178749e56, type: 2}

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38eae1ab3030942a1efe644fac9652, type: 3}
   m_Name: BallAbility
   m_EditorClassIdentifier: 
-  abilityName: Cannon
-  icon: {fileID: 0}
-  abilityType: 0
+  AbilityName: Ball
+  Icon: {fileID: 0}
+  AbilityType: 0
   Damage: 10
   VFX: {fileID: 1095809974678954077, guid: 10a2e87de1ef50e4e943dbfabba8e7f4, type: 3}
   Animation: {fileID: 4916225229724470746, guid: 0b8dd62facf009d43af97f400ff73245, type: 3}

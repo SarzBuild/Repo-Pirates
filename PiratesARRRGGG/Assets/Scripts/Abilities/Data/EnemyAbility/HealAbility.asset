@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2da7e974ac43543a28847feeb8bb7f, type: 3}
   m_Name: HealAbility
   m_EditorClassIdentifier: 
-  abilityName: Heal
-  icon: {fileID: 0}
-  abilityType: 1
+  AbilityName: Heal
+  Icon: {fileID: 0}
+  AbilityType: 0
   Damage: 10
   VFX: {fileID: 1066636361181457809, guid: 62ef2711d75a409408fc1a2ed6a333c7, type: 3}
   Animation: {fileID: 0}
