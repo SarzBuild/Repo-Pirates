@@ -52,8 +52,8 @@ public class BattleSystem : StateMachine
                 target.PlayDamageAnimation(); //for the feedback of damage
                 yield break;
             case AbilityType.DOUBLEEDGE:
-                target.Damaged((int)(ability.DoAbility() * 1.3f));
-                user.Damaged(5);
+                target.Damaged((int)(ability.DoAbility() * 1.5f));
+                user.Damaged(target.Stats.PhysicalPower);
                 target.PlayDamageAnimation();
                 user.PlayDamageAnimation();
                 yield break;
