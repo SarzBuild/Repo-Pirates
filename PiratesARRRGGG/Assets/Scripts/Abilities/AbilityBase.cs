@@ -6,7 +6,7 @@ using UnityEngine;
 //Attack will do minus;
 //Heal will do plus;
 //Status Effect will leave a lasting minus effect.
-public enum AbilityType { ATTACK, HEAL, STATUSEFFECT }
+public enum AbilityType { ATTACK, HEAL, STATUSEFFECT, DOUBLEEDGE }
 
 //Base for abilities
 public abstract class AbilityBase : ScriptableObject

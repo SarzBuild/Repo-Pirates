@@ -51,6 +51,12 @@ public class BattleSystem : StateMachine
                 target.SetStatusEffect((int)ability.DoAbility());
                 target.PlayDamageAnimation(); //for the feedback of damage
                 yield break;
+            case AbilityType.DOUBLEEDGE:
+                target.Damaged((int)(ability.DoAbility() * 1.3f));
+                user.Damaged(5);
+                target.PlayDamageAnimation();
+                user.PlayDamageAnimation();
+                yield break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
